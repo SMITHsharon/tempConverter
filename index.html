@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form>
+	  <fieldset>
+	    <legend>Does it need a legend?</legend>
+
+	    <!-- In the HTML, have one input field where someone can enter in a temperature. -->
+	    Enter Temperature:<br>
+	    <input type="text" name="temp" value="temperature"><br>
+	    
+<!-- 	    Create a radio button group where Celsius or Fahrenheit can be selected as the scale that the number should be converted to.
+ -->	    <br>
+		<input type="radio" name="tempType" value="cels" checked>Celsius<br>
+		<input type="radio" name="tempType" value="fahr">Fahrenheit<br>
+
+		<!-- Create a block level element that will hold the text of the converted temperature. -->
+		<div id="convertedTemp"></div>
+
+		<!-- Create another button that, when clicked, clears any text in the input field. -->
+		<br>
+		<input type="submit" value="Clear Enter Temperature Field">
+
+ 	</form>
+
+	<script type="text/javascript" src="converter.js"></script>
+</body>
+</html>
