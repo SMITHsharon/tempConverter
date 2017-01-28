@@ -6,23 +6,27 @@
 <body>
 	<form>
 	  <fieldset>
-	    <legend>Does it need a legend?</legend>
+	    <legend>Basic Temperature Converter Celsius <=> Fahrenheit</legend>
 
-	    <!-- In the HTML, have one input field where someone can enter in a temperature. -->
+	    <!-- (1) In the HTML, have one input field where someone can enter in a temperature. -->
 	    Enter Temperature:<br>
 	    <input type="text" name="temp" value="temperature"><br>
 	    
-<!-- 	    Create a radio button group where Celsius or Fahrenheit can be selected as the scale that the number should be converted to.
+<!-- 	    (2) Create a radio button group where Celsius or Fahrenheit can be selected as the scale that the number should be converted to.
  -->	    <br>
 		<input type="radio" name="tempType" value="cels" checked>Celsius<br>
 		<input type="radio" name="tempType" value="fahr">Fahrenheit<br>
 
-		<!-- Create a block level element that will hold the text of the converted temperature. -->
+		<!-- (3) Create a block level element that will hold the text of the converted temperature. -->
 		<div id="convertedTemp"></div>
 
-		<!-- Create another button that, when clicked, clears any text in the input field. -->
+		<!-- (4) Create a button that, when clicked, displays the converted temperature. -->
 		<br>
-		<input type="submit" value="Clear Enter Temperature Field">
+		<input type="submit" value="Display Converted Temperature" onclick="displayTemp()">
+
+		<!-- (5) Create another button that, when clicked, clears any text in the input field. -->
+		<br><br>
+		<input type="submit" value="Clear Enter Temperature Field" onclick="clearField()">
 
  	</form>
 
