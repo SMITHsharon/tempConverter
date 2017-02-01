@@ -1,0 +1,25 @@
+.btnText {
+	font-size: 1.15em;
+}
+
+#convertedTemp {
+	margin-top: 10px;
+	max-width: 20%;
+}
+
+p:only-child {
+	font-size: 1.15em;
+	border: 1px solid slategrey;
+}
+
+.red-font {
+	color: red; // display if converted temp is > 90F/32C
+}
+
+.blue-font {
+	color: blue; // display if converted temp is < 32F/0C
+}
+
+.green-font {
+	color: green; 
+}
