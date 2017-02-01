@@ -9,24 +9,24 @@
 	    <legend>Basic Temperature Converter Celsius <=> Fahrenheit</legend>
 
 	    <!-- (1) In the HTML, have one input field where someone can enter in a temperature. -->
-	    Enter Temperature:<br>
-	    <input type="text" name="temp" value="temperature"><br>
+	    <br>
+	    <input type="text" name="temp" size=30 value="Temperature You Want To Convert"><br>
 	    
 <!-- 	    (2) Create a radio button group where Celsius or Fahrenheit can be selected as the scale that the number should be converted to.
  -->	    <br>
-		<input type="radio" name="tempType" value="cels" checked>Celsius<br>
-		<input type="radio" name="tempType" value="fahr">Fahrenheit<br>
-
-		<!-- (3) Create a block level element that will hold the text of the converted temperature. -->
-		<div id="convertedTemp"></div>
+		<input type="radio" name="tempType" value="cels" >Celsius => Fahrenheit<br>
+		<input type="radio" name="tempType" value="fahr">Fahrenheit => Celsius<br>
 
 		<!-- (4) Create a button that, when clicked, displays the converted temperature. -->
 		<br>
-		<input type="submit" value="Display Converted Temperature" onclick="displayTemp()">
+		<input type="submit" value="Convert" onclick="displayTemp()">
 
 		<!-- (5) Create another button that, when clicked, clears any text in the input field. -->
-		<br><br>
-		<input type="submit" value="Clear Enter Temperature Field" onclick="clearField()">
+		<input type="submit" value="Clear" onclick="clearField()">
+
+		<!-- (3) Create a block level element that will hold the text of the converted temperature. -->
+		<div id="convertedTemp"></div>
+		Your Converted Temp Is: 
 
  	</form>
 
