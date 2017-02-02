@@ -1,19 +1,26 @@
 console.log("converter is running");
 
-function checkForEnter(thisChar) {
-	var enterKey = 13;
-	if (thisChar === enterKey) { // if (thisChar.which === enterKey)
-		console.log("reading temp input")
-		return document.getElementById("temp").innerHTML; // capture user input temp value
-	}
+window.addEventListener('keyup', 
+	function (e) {
+		console.log("listening for Enter Key");
+		if (e.keyCode === 13) {
+			getUserInput();
+ 		}, false ); 		
 }
-
-// function readInput() {
-// 	document.getElementById("temp").innerHTML; // capture user input temp value
+// function checkForEnter(thisChar) {
+// 	var enterKey = 13;
+// 	if (thisChar === enterKey) { // if (thisChar.which === enterKey)
+// 		console.log("reading temp input")
+// 		return document.getElementById("temp").innerHTML; // capture user input temp value
+// 	}
 // }
 
-var userInput = checkForEnter(thisChar); // if <Enter>, returns user temp
-console.log(userInput);
+
+// this won't work as the needed value is not being stored in a var ... being called from event handler?
+function getUserInput() 
+	return document.getElementById("temp").innerHTML; // capture user input temp value
+}
+
 
 function clearInputField() {
 	document.getElementById("temp").innerHTML = "";
@@ -22,7 +29,7 @@ function clearInputField() {
 
 
 function toCelsius () {
-F => C :: [°C] = ([°F] − 32) ×  5⁄9
+// F => C :: [°C] = ([°F] − 32) ×  5⁄9
 	var fTemp = document.getElementById("temp").innerHTML;
 	return [ ( fTemp - 32 ) * ( 5/9 ) ];
 }
@@ -51,3 +58,5 @@ function determineConverter (clickEvent) {
 
 // Assign a function to be executed when the button is clicked
 button.addEventListener("click", determineConverter);
+
+
