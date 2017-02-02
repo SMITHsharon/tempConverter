@@ -5,7 +5,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
-	<form>
+	<form class="tempForm">
 	  <fieldset>
 	    <legend>Basic Temperature Converter Celsius <=> Fahrenheit</legend>
 
@@ -15,8 +15,8 @@
 	    
 <!-- 	    (2) Create a radio button group where Celsius or Fahrenheit can be selected as the scale that the number should be converted to.
  -->	    <br>
-		<input type="radio" class="btnText" name="tempType" value="cels" >Celsius => Fahrenheit<br>
-		<input type="radio" class="btnText" name="tempType" value="fahr">Fahrenheit => Celsius<br>
+		<input type="radio" id="converter" class="btnText" name="tempType" value="cels"  onclick="determineConverter()">Celsius => Fahrenheit<br> <!-- why not function toFahrenheit() here? -->
+		<input type="radio" id="converter" class="btnText" name="tempType" value="fahr" onclick="determineConverter">Fahrenheit => Celsius<br> <!-- why not function toCelsius() here? -->
 
 		<!-- (4) Create a button that, when clicked, displays the converted temperature. -->
 		<br>
