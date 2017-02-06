@@ -1,17 +1,17 @@
 console.log("converter is running");
 
+//*******************************************
 // define Event Listners
 var converterButton = document.getElementById("converter");
 var clearButton = document.getElementById("clear");
 var enterKey = document.getElementById("temp");
+var outputText = document.getElementById("output");
 
 enterKey.addEventListener("keyup", 
 	function (e) {
 		if (e.keyCode === 13) {
-			// console.log("pressed Enter Key");
 			performConversion ();
  		} else {
-			// console.log("pressed something else");
  			return false;
  		} 		
 });
@@ -22,7 +22,7 @@ converterButton.addEventListener("click", function() {
 
 clearButton.addEventListener("click", function(){
   // console.log("clearButton working");
-  clearInputField()''
+  clearInputField();
 });
 
 function clearInputField() {
@@ -34,15 +34,12 @@ function clearInputField() {
 //*******************************************
 // if <Enter> key or <Convert> button, 
 // determine which conversion to calculate
-// function determineConverter (clickEvent) {
 function determineConverter (whichConv) {
-  // console.log("determining converter");
-  var whichConv;
-  // console.log("whichConv");
+  // var whichConv;
   if (document.getElementById("cels").checked) {
-  	whichConv = "toCels";
+  	whichConv = "toCels"; // F => C
   } else if (document.getElementById("fahr").checked) {
-  	whichConv = "toFahr";
+  	whichConv = "toFahr"; // C => F
     } else {
         alert("Please select either Fahrenheit or Celsius for conversion.");
     }
@@ -63,50 +60,48 @@ function calcConversion (CorF) {
 		return [ ( inputTemp - 32 ) * ( 5/9 ) ];
 	}
 }
+
+//*******************************************
+// Calculate the text color for output
+// greater than 90F/32C :: RED
+// less than 32F/0C :: BLUE
+// all other :: GREEN
+function determineColor (temp, CorF) {
+	if ((CorF === "toFahr") && (temp > 90) || (CorF === "toFahr") && (temp < 32)) {
+		return "red";
+	} else if ((CorF === "toCels") && (temp > 32) || (CorF === "toCels") && (temp < 0)) {
+		return "blue";
+	} else {
+		return "green";
+	}
+}
 	
+
+//*******************************************
+// Output the result to the user
+function displayResult (result, color) {
+	console.log("displayingResult");
+	outputText.innerHTML = "<p><strong>Your Converted Temp Is: " + result + ".</strong></p>"
+	outputText.style.color = color;
+}
 
 
   
-	
-
-
+//*******************************************
+// MAIN PROGRAM CONTROL
+//*******************************************
 function performConversion () {
-	var whichConv;
-	var convertedTemp;
+	var whichConv;       // reads whether (F=>C || C=>F)
+	var convertedTemp;   // var holds the converted temp
+	var outputColor;     // var holds the color for printing the output, per specs
+
 	whichConv = determineConverter(whichConv);
 	convertedTemp = calcConversion(whichConv);
-
+	outputColor = determineColor (convertedTemp);
+	displayResult(convertedTemp, outputColor);
 }
 
 
-// // this won't work as the needed value is not being stored in a var ... being called from event handler?
-// function getUserInput() {
-// 	return document.getElementById("temp").innerHTML; // capture user input temp value
-// }
 
-
-
-
-
-
-function toCelsius () {
-// F => C :: [°C] = ([°F] − 32) ×  5⁄9
-	var fTemp = document.getElementById("temp").innerHTML;
-	return [ ( fTemp - 32 ) * ( 5/9 ) ];
-}
-
-function toFahrenheit () {
-// C => F :: [°F] = [°C] ×  9⁄5 + 32
-	var cTemp = document.getElementById("temp").innerHTML;
-	return [ cTemp * ( 9/5 ) ] + 32; 
-}
-
-// Get a reference to the button element in the DOM
-var rButtons = document.getElementById("converter"); // where is this needed/used???
-
-
-
-// Assign a function to be executed when the button is clicked
-converterButton.addEventListener("click", determineConverter);
 
 
