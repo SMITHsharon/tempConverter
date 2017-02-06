@@ -11,25 +11,26 @@
 
 	    <!-- (1) In the HTML, have one input field where someone can enter in a temperature. -->
 	    <br>
-	    <input type="text" id="temp" class="btnText" size=30 value="Temperature You Want To Convert" onkeyup="checkForEnter(e)"><br>
+	    <input type="text" id="temp" size=30 placeholder="Temperature You Want To Convert"><br>
 	    
 <!-- 	    (2) Create a radio button group where Celsius or Fahrenheit can be selected as the scale that the number should be converted to.
  -->	    <br>
-		<input type="radio" id="converter" class="btnText" name="tempType" value="cels"  onclick="determineConverter()">Celsius => Fahrenheit<br> <!-- why not function toFahrenheit() here? -->
-		<input type="radio" id="converter" class="btnText" name="tempType" value="fahr" onclick="determineConverter">Fahrenheit => Celsius<br> <!-- why not function toCelsius() here? -->
+		<input type="radio" class="btnText" name="tempType" id="cels">Celsius => Fahrenheit<br> <!-- why not function toFahrenheit() here? -->
+		<input type="radio" class="btnText" name="tempType" id="fahr">Fahrenheit => Celsius<br> <!-- why not function toCelsius() here? -->
 
 		<!-- (4) Create a button that, when clicked, displays the converted temperature. -->
 		<br>
-		<input type="submit" class="btnText" value="Convert" onclick="displayTemp()">
+		<button type="submit" id="converter" value="Convert">Convert</button>
 
 		<!-- (5) Create another button that, when clicked, clears any text in the input field. -->
-		<input type="submit" class="btnText" value="Clear" onclick="clearField()">
+		<button type="submit" id="clear"  value="Clear" onclick="clearField()">Clear</button>
+	</form>
 
 		<!-- (3) Create a block level element that will hold the text of the converted temperature. -->
-		<div id="convertedTemp">
+<!-- 		<div id="output">
 			<p>Your Converted Temp Is: </p>
 		</div>
- 	</form>
+ --> 	
 
 	<script type="text/javascript" src="converter.js"></script>
 </body>
