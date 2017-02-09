@@ -1,16 +1,17 @@
 console.log("converter is running");
 
 //*******************************************
-// define Event Listners
+// define Event Listeners
 //*******************************************
+var enterKey = document.getElementById("temp");
 var converterButton = document.getElementById("converter");
 var clearButton = document.getElementById("clear");
-var enterKey = document.getElementById("temp");
 var outputText = document.getElementById("output");
 
 enterKey.addEventListener("keyup", 
 	function (e) {
 		if (e.keyCode === 13) {
+console.log("pressed Enter Key");
 			performConversion ();
  		} else {
  			return false;
@@ -18,10 +19,11 @@ enterKey.addEventListener("keyup",
 });
 
 converterButton.addEventListener("click", function() {
-	performConversion ();
+console.log("Convert Button clicked");
+	performConversion();
 });
 
-clearButton.addEventListener("click", function(){
+clearButton.addEventListener("click", function() {
   // console.log("clearButton working");
   clearInputField();
 });
@@ -35,15 +37,17 @@ clearButton.addEventListener("click", function(){
 function performConversion () {
 	var whichConv;       // reads whether (F=>C || C=>F)
 	var convertedTemp;   // var holds the converted temp
-	var outputColor;     // var holds the color for printing the output, per specs
+	var getOutputColor;     // var holds the color for printing the output, per specs
 
 	whichConv = determineConverter();
-// console.log("from MAIN performConversion :: whichConv = ", whichConv);
+// console.log("from MAIN performConversion :: whichConv = ", whichConv); :: CORRECT
 	convertedTemp = calcConversion(whichConv);
-console.log("from MAIN performConversion :: convertedTemp = ", convertedTemp);
-	outputColor = determineColor (convertedTemp);
-console.log("from MAIN performConversion :: outputColor = ", outputColor);
-	displayResult(convertedTemp, outputColor, whichConv);
+// console.log("from MAIN performConversion :: convertedTemp = ", convertedTemp);
+	getOutputColor = determineColor (convertedTemp);
+console.log("from MAIN performConversion :: ");
+inputTemp = document.getElementById("temp").value;
+console.log(inputTemp + " => " + convertedTemp + " " + getOutputColor + " " + whichConv);
+	displayResult(convertedTemp, getOutputColor, whichConv);
 }
 
 
@@ -59,13 +63,13 @@ function clearInputField() {
 // determine which conversion to calculate
 //*******************************************
 function determineConverter () {
-  // var whichConv;
+// var whichConv;
   if (document.getElementById("cels").checked) {
+// console.log("running determineConverter :: whichConv = toCels"); :: CORRECT
   	return "toCels"; // F => C
-console.log("running determineConverter :: whichConv = ", whichConv); 
   } else if (document.getElementById("fahr").checked) {
+// console.log("running determineConverter :: whichConv = toFahr"); :: CORRECT
   	return "toFahr"; // C => F
-console.log("running determineConverter :: whichConv = ", whichConv); 
     } else {
         alert("Please select either Fahrenheit or Celsius for conversion.");
     }
@@ -79,11 +83,11 @@ function calcConversion (CorF) {
 	// var cTemp = document.getElementById("temp").innerHTML;
 	// var fTemp = document.getElementById("temp").innerHTML;
 	inputTemp = document.getElementById("temp").value;
-	console.log("running calcConversion :: inputTemp = ", inputTemp);
+// console.log("running calcConversion :: inputTemp = ", inputTemp); // CORRECT
 	if (CorF === "toFahr") {
 		// C => F :: [°F] = [°C] ×  9⁄5 + 32
 // console.log("running calcConversion :: CorF for toFahr = ", CorF); // CORRECT
-		return [ inputTemp * ( 9/5 ) ] + 32; 
+		return [ inputTemp * ( 9/5 )  + 32 ]; 
 	} else { // "toCels"
 // console.log("running calcConversion :: CorF for toCels = ", CorF); // CORRECT
 		// F => C :: [°C] = ([°F] − 32) ×  5⁄9
