@@ -1,5 +1,50 @@
-.btnText {
-	font-size: 1.15em;
+body {
+	font-family: 'Catamaran', sans-serif;
+	 background-color: #CBD2D4;
+}
+legend {
+	font-size: 1.5em;
+	font-weight: 900;
+}
+
+.tempForm {
+	width: 50%;
+	margin: auto;
+	padding-left: 15px;
+}
+
+input[type="text"] {
+	display: block;
+	margin: 0;
+	padding: 5px 0 5px 10px;
+	width: 40%;
+	font-size: 1em;
+	border: 1px solid slategrey;
+	border-radius: 10%;
+}
+
+fieldset {
+	background-color: #BAD9E3;
+}
+
+button {
+    margin: 0;
+    padding: 10px;
+    line-height: 24px;
+    width: 20%;
+	font-size: 1.2em;
+	background-color: #BAD9E3;
+	border: 1px solid slategrey;
+	border-radius: 10%;
+}
+
+/*.btnText {*/
+.btnText input:hover {
+    background-color:rgba(255,204,0,0.8);
+/*    margin: 0;
+    padding: 10px;
+    width: 10%;
+	font-size: 1.2em;*/
 }
 
 #convertedTemp {

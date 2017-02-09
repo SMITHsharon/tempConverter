@@ -3,6 +3,7 @@
 <head>
 	<title>(17) Temperature Converture</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
 </head>
 <body>
 	<form class="tempForm">
@@ -11,19 +12,20 @@
 
 	    <!-- (1) In the HTML, have one input field where someone can enter in a temperature. -->
 	    <br>
-	    <input type="text" id="temp" size=30 placeholder="Temperature You Want To Convert"><br>
+	    <!-- <input type="text" id="temp" size=30 placeholder="Temperature You Want To Convert"> -->
+	    <input type="text" id="temp" placeholder="Temp You Want To Convert"><br>
 	    
 <!-- 	    (2) Create a radio button group where Celsius or Fahrenheit can be selected as the scale that the number should be converted to.
- -->	    <br>
-		<input type="radio" class="btnText" name="tempType" id="cels">Celsius => Fahrenheit<br> <!-- why not function toFahrenheit() here? -->
-		<input type="radio" class="btnText" name="tempType" id="fahr">Fahrenheit => Celsius<br> <!-- why not function toCelsius() here? -->
+ -->
+		<input type="radio" class="btnText" name="tempType" id="fahr">Celsius => Fahrenheit<br> 
+		<input type="radio" class="btnText" name="tempType" id="cels">Fahrenheit => Celsius<br> 
 
 		<!-- (4) Create a button that, when clicked, displays the converted temperature. -->
 		<br>
-		<button type="submit" id="converter" value="Convert">Convert</button>
+		<button type="submit" class="converter" value="Convert">Convert</button>
 
 		<!-- (5) Create another button that, when clicked, clears any text in the input field. -->
-		<button type="submit" id="clear"  value="Clear" onclick="clearField()">Clear</button>
+		<button type="submit" class="clear"  value="Clear" onclick="clearField()">Clear</button>
 	</form>
 
 		<!-- (3) Create a block level element that will hold the text of the converted temperature. -->
