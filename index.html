@@ -5,43 +5,31 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Catamaran" rel="stylesheet">
 </head>
+
 <body>
 	<div class="tempForm">
 	  <fieldset>
-	    <legend>Basic Temperature Converter Celsius <=> Fahrenheit</legend>
+	    <legend>Basic Temp Converter Celsius <=> Fahrenheit</legend>
 
 	    <!-- (1) In the HTML, have one input field where someone can enter in a temperature. -->
-	    <br>
-	    <!-- <input type="text" id="temp" size=30 placeholder="Temperature You Want To Convert"> -->
-	    <input type="text" id="temp" placeholder="Temp You Want To Convert"><br>
+	    <input type="text" id="temp" placeholder="Temp You Want To Convert">
 
 		<!-- (2) Create a radio button group where Celsius or Fahrenheit can be selected as the scale that the number should be converted to. -->
-		<input type="radio" class="btnText" name="tempType" id="fahr">Celsius => Fahrenheit<br> 
-		<input type="radio" class="btnText" name="tempType" id="cels">Fahrenheit => Celsius<br> 
-
-<!-- (3) Create a block level element that will hold the text of the converted temperature. -->
-		<div id="output">
-<!-- <p id="output"></p> -->
-<!-- <input type="text"  value=""> -->
-		</div>
-	    
-
-
-		<!-- (4) Create a button that, when clicked, displays the converted temperature. -->
-		<br>
-		<button type="submit" id="converter" value="Convert" onclick="performConversion()">Convert</button>
-
-		<!-- (5) Create another button that, when clicked, clears any text in the input field. -->
-		<!-- <button type="submit" id="clear"  value="Clear" onclick="clearField()">Clear</button> -->
-		<button type="submit" id="clear"  value="Clear">Clear</button>
-	</div>
+		<input type="radio" class="btnText" name="tempType" id="fahr"> Celsius => Fahrenheit<br> 
+		<input type="radio" class="btnText" name="tempType" id="cels"> Fahrenheit => Celsius<br> 
 
 		<!-- (3) Create a block level element that will hold the text of the converted temperature. -->
-<!-- 		<div>
-			<input type="text" id="output">
-		</div>
- --> 	
+		<div id="output"></div>
+	    
+		<!-- (4) Create a button that, when clicked, displays the converted temperature. -->
+		<button type="submit" id="converter" value="Convert">Convert</button>
+
+		<!-- (5) Create another button that, when clicked, clears any text in the input field. -->
+		<button type="submit" id="clear"  value="Clear">Clear</button>
+	</div>
 
 	<script type="text/javascript" src="converter.js"></script>
 </body>
 </html>
+
+
