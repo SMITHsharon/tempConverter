@@ -1,43 +1,7 @@
-console.log("converter is running");
-
-//*******************************************
-// define Event Listeners
-//*******************************************
-var enterKey = document.getElementById("temp");
-var converterButton = document.getElementById("converter");
-var clearButton = document.getElementById("clear");
-
-enterKey.addEventListener
-	("keyup", 
-	function (e) {
-					if (e.keyCode === 13) {
-console.log("pressed Enter Key");
-						performConversion();
- 					} else {
- 						return false;
- 					} 		
-});
-
-// converterButton.addEventListener("click", performConversion()); 
-converterButton.addEventListener("click", function() {
-console.log("Convert Button clicked");
-	performConversion();
-});
-
-
-// clearButton.addEventListener("click", clearInputField());
-clearButton.addEventListener("click", function() {
-  // console.log("clearButton working");
-  clearInputField();
-});
-
-
-
-  
 //*******************************************
 // MAIN PROGRAM CONTROL
 //*******************************************
-function performConversion () {
+function performConversion (clickEvent) {
 	var whichConv;       // reads whether (F=>C || C=>F)
 	var convertedTemp;   // var holds the converted temp
 	var getOutputColor;  // var holds the color for printing the output, per specs
@@ -129,4 +93,59 @@ function displayResult (result, color, CorF) {
 
 
 
+
+//*******************************************
+// define Event Listeners
+//*******************************************
+var enterKey = document.getElementsByClassName("tempForm");
+var converterButton = document.getElementById("converter");
+var clearButton = document.getElementById("clear");
+
+// // enterKey.addEventListener
+// enterKey.addEventListener
+// 	("keyup", 
+// 	function(e) {
+// // document.getElementsByClassName("tempForm").onkeyup = function(e) {
+// 					if (e.keyCode === 13) {
+// 						mainLaunchEnter;
+//  					} else {
+//  						return false;
+//  					} 		
+// });
+
+function inputKeyUp(e) {
+	console.log("in <enter> event handler ; e.which = ", e.which);
+    e.which = e.which || e.keyCode;
+    if (e.which === 13) {
+    	console.log("in <enter> event handler ; <Enter Key>");
+        mainLaunchEnter;
+    } else {
+    	console.log("in <enter> event handler ; <Some Other Key>");
+    	return false;
+    }
+}
+
+function mainLaunchEnter (keyupEvent) {
+	console.log("in mainLaunchEnter");
+	performConversion()
+};
+
+
+converterButton.addEventListener("click", mainLaunchClick);
+
+function mainLaunchClick (clickEvent) {
+	performConversion()
+};
+
+
+clearButton.addEventListener("click", clearAll);
+
+function clearAll (clickEvent) {
+	inputTemp = document.getElementById("temp").value = "";
+	document.getElementById("cels").checked = false;
+	document.getElementById("fahr").checked = false;
+	document.getElementById("output").innerHTML = "";
+}
+
+  
 
