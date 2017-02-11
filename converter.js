@@ -101,22 +101,26 @@ var clearButton = document.getElementById("clear");
 function inputKeyUp(e) {
     e.which = e.which || e.keyCode;
     if (e.which === 13) {
-        mainLaunchEnter();
+    	performConversion();
+        // mainLaunchEnter();
     } else {
     	return false;
     }
 }
 
-function mainLaunchEnter (keyup) {
+// enterKey.addEventListener("keyup", function() { // NOT TESTED ... BUT SHOULD WORK
+//     e.which = e.which || e.keyCode;
+//     if (e.which === 13) {
+//     	performConversion();
+//         // mainLaunchEnter();
+//     } else {
+//     	return false;
+//     }
+// });
+
+converterButton.addEventListener("click", function() {
 	performConversion();
-};
-
-
-converterButton.addEventListener("click", mainLaunchClick);
-
-function mainLaunchClick (clickEvent) {
-	performConversion();
-};
+});
 
 
 clearButton.addEventListener("click", clearAll);
