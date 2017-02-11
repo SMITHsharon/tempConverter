@@ -7,12 +7,12 @@
 </head>
 
 <body>
-	<div class="tempForm" >
+	<div class="tempForm" onkeyup="inputKeyUp(event)">
 	  <fieldset>
 	    <legend>Basic Temp Converter Celsius <=> Fahrenheit</legend>
 
 	    <!-- (1) In the HTML, have one input field where someone can enter in a temperature. -->
-	    <input type="text" id="temp" placeholder="Temp You Want To Convert" onkeyup="inputKeyUp(event)">
+	    <input type="text" id="temp" placeholder="Temp You Want To Convert">
 
 		<!-- (2) Create a radio button group where Celsius or Fahrenheit can be selected as the scale that the number should be converted to. -->
 		<input type="radio" class="btnText" name="tempType" id="fahr"> Celsius => Fahrenheit<br> 

@@ -6,22 +6,19 @@ function performConversion (clickEvent) {
 	var convertedTemp;   // var holds the converted temp
 	var getOutputColor;  // var holds the color for printing the output, per specs
  
-	whichConv = determineConverter(); 		   // RETURNS "toCels" or "toFahr"
+	whichConv = determineConverter();   // RETURNS "toCels" or "toFahr"
 
-	convertedTemp = calcConversion(whichConv); // RETURNS calculated converted temp
+	if (whichConv !== "blank") {
 
-	theOutputColor = determineColor (convertedTemp, whichConv);
+		convertedTemp = calcConversion(whichConv); // RETURNS calculated converted temp
+
+		theOutputColor = determineColor (convertedTemp, whichConv);
 											   // RETURNS "red", "blue", "green"
 
-	displayResult(convertedTemp, theOutputColor, whichConv);
+		displayResult(convertedTemp, theOutputColor, whichConv);
+	} 
 }
 
-
-
-//*******************************************
-function clearInputField() {
-	document.getElementById("temp").innerHTML = "";
-}
 
 
 //*******************************************
@@ -36,6 +33,7 @@ function determineConverter () {
   	return "toFahr"; // C => F
     } else {
         alert("Please select either Fahrenheit or Celsius for conversion.");
+        return "blank";
     }
 }
 
@@ -88,9 +86,8 @@ function displayResult (result, color, CorF) {
 	} else {
 		outputText.innerHTML += "&deg;C";
 	}
-	output.innerHTML += "<br/>(value is not rounded)";
+	output.innerHTML += "<br/>(egads. value is not rounded)";
 }
-
 
 
 
@@ -101,40 +98,24 @@ var enterKey = document.getElementsByClassName("tempForm");
 var converterButton = document.getElementById("converter");
 var clearButton = document.getElementById("clear");
 
-// // enterKey.addEventListener
-// enterKey.addEventListener
-// 	("keyup", 
-// 	function(e) {
-// // document.getElementsByClassName("tempForm").onkeyup = function(e) {
-// 					if (e.keyCode === 13) {
-// 						mainLaunchEnter;
-//  					} else {
-//  						return false;
-//  					} 		
-// });
-
 function inputKeyUp(e) {
-	console.log("in <enter> event handler ; e.which = ", e.which);
     e.which = e.which || e.keyCode;
     if (e.which === 13) {
-    	console.log("in <enter> event handler ; <Enter Key>");
-        mainLaunchEnter;
+        mainLaunchEnter();
     } else {
-    	console.log("in <enter> event handler ; <Some Other Key>");
     	return false;
     }
 }
 
-function mainLaunchEnter (keyupEvent) {
-	console.log("in mainLaunchEnter");
-	performConversion()
+function mainLaunchEnter (keyup) {
+	performConversion();
 };
 
 
 converterButton.addEventListener("click", mainLaunchClick);
 
 function mainLaunchClick (clickEvent) {
-	performConversion()
+	performConversion();
 };
 
 
