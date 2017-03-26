@@ -9,20 +9,20 @@ The Temperature Converter program
 
 
 #### Temperature Converter on Launch
-![Temp Conv on Launch](...)
+![Temp Conv on Launch](https://raw.githubusercontent.com/SMITHsharon/tempConverter/screens/screens/Temp%20Converter%20on%20Launch.png)
 
 #### Temperature Converter w User Input
-![Temp Conv w User Input](...)
+![Temp Conv w User Input](https://raw.githubusercontent.com/SMITHsharon/tempConverter/screens/screens/Temp%20Converter%20w%20User%20Input.png)
 
 #### Temperature Converter w Temperature Output
-![Temp Conv w Temp Output](...)
+![Temp Conv w Temp Output](https://raw.githubusercontent.com/SMITHsharon/tempConverter/screens/screens/Temp%20Converter%20w%20Conversion%20Output.png)
 
 
 ### Project Specs
 #### `html` structure and definitions
-- Created an input text field in which the user can enter in a temperature.
-- Created a radio button group for the user to select `Celsius to Fahrenheit` or `Fahrenheit to Celsius` conversion calculation. 
-- Created a block level element for containing the text of the converted temperature.
+- Created an input text field in which the user can enter a temperature to be converted.
+- Created a radio button group for the user to select `Celsius to Fahrenheit` or `Fahrenheit to Celsius` conversion. 
+- Created a block level element for containing the output (text) of the converted temperature.
 - Created a `Convert` button that, when clicked, displays the converted temperature.
 - Created a `Clear` button that, when clicked, clears any text in the input field.
 
