@@ -33,8 +33,11 @@ The Temperature Converter program
 - If the temperature is less than 32F/0C, the color of the output/converted temperature displays in blue.
 - For any other temperature, the output displays in green.
 
+#### Started Layout Planning w This Wireframe
+![Temp Conv Wireframe](https://raw.githubusercontent.com/SMITHsharon/tempConverter/master/2017.01.30%20wire%20frame.png)
 
-Sample `javascript` code provided
+
+#### Sample `javascript` code provided
 ```
 	function toCelsius () {
 
