@@ -20,24 +20,24 @@ The Temperature Converter program
 
 ### Project Specs
 #### `html` structure and definitions
-- Created an input text field in which the user can enter a temperature to be converted.
-- Created a radio button group for the user to select `Celsius to Fahrenheit` or `Fahrenheit to Celsius` conversion. 
-- Created a block level element for containing the output (text) of the converted temperature.
-- Created a `Convert` button that, when clicked, displays the converted temperature.
-- Created a `Clear` button that, when clicked, clears any text in the input field.
+- Creates an input text field in which the user can enter a temperature to be converted
+- Creates a radio button group for the user to select `Celsius to Fahrenheit` or `Fahrenheit to Celsius` conversion
+- Creates a block level element for containing the output (text) of the converted temperature
+- Creates a `Convert` button that, when clicked, displays the converted temperature
+- Creates a `Clear` button that, when clicked, clears any text in the input field
 
 #### functionality implemented in `javascript` 
-- Coded an event handler tied to the input text field that checks if the user pressed the `Enter` key. 
+- Event handler tied to the input text field that checks if the user pressed the `Enter` key. 
 - When `Enter` is pressed, the app reads the selected `Celsius to Fahrenheit` or `Fahrenheit to Celsius` option and performs the respective conversion. 
-- If the temperature is greater than 90F/32C, the color of the output/converted temperature displays in red.
-- If the temperature is less than 32F/0C, the color of the output/converted temperature displays in blue.
-- For any other temperature, the output displays in green.
+- If the temperature is greater than 90F/32C, the color of the output/converted temperature displays in red
+- If the temperature is less than 32F/0C, the color of the output/converted temperature displays in blue
+- For any other temperature, the output displays in green
 
 #### Started Layout Planning w This Wireframe
 ![Temp Conv Wireframe](https://raw.githubusercontent.com/SMITHsharon/tempConverter/master/2017.01.30%20wire%20frame.png)
 
 
-#### Sample `javascript` code provided
+#### Sample `JavaScript` code provided
 ```
 	function toCelsius () {
 
@@ -63,7 +63,7 @@ The Temperature Converter program
 ### Technologies Used
 - `html`
 - `css`
-- `javascript`
+- `JavaScript`
 
 
 ### How To View The Screen 
@@ -71,12 +71,9 @@ The Temperature Converter program
 ```
 git clone https://github.com/SMITHsharon/tempConverter.git
 cd converter
-npm install http-server -g
 http-server -p 8080
+This will show in your browser at: http://localhost:8080
 ```
-
-This will show in your browser at: `http://localhost:8080`
-
 
 ### Contributor
 [Sharon Smith](https://github.com/SMITHsharon)
